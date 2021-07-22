@@ -14,7 +14,7 @@ var nodeoutlook = require('nodejs-nodemailer-outlook');
   }
 */
 
-const SMTP_CONFIG = require("../config/smtp");
+const SMTP_CONFIG = require("../configSMTP/smtp");
 
 module.exports.enviarEmail = async (event, context) => 
 {
