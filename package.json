@@ -1,5 +1,5 @@
 {
-  "name": "my-first-lambda",
+  "name": "desafio-2-back",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,5 +11,12 @@
   "license": "ISC",
   "devDependencies": {
     "serverless": "^2.43.1"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.948.0",
+    "nodejs-nodemailer-outlook": "^1.2.4",
+    "nodemailer": "^6.6.3",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "uuid": "^8.3.2"
   }
 }

@@ -1,11 +1,22 @@
-# Serverless Framework + AWS Lambda + API Gateway
+# Desafio 2 | Back-end 
 
-A template repository to start using Serverless Framework with AWS.
 
-## Run and deploy
+## 📋 Sobre
 
-- Clone this repo
-- Install dependencies with `npm install`
-- Run deploy command with `serverless deploy -v`
+O projeto foi elaborado durante o desafio BGC,contudo foi feito back e front end da aplicação.
 
-> You will need to configure AWS CLI before run deploy.
+
+## 👨‍💻 Tecnologias utilizadas
+
+- [Node.js](https://nodejs.org/en/)
+- [Serverless](https://www.serverless.com/)
+- [AWS](https://aws.amazon.com/pt/?nc2=h_lg)
+    - API Gateway
+    - Lambda Function
+    - DynamoDB
+    
+- [Nodemailer](https://nodemailer.com/about/)
+
+
+### Desenvolvido por Erik Stellet
+

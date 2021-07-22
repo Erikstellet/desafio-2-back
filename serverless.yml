@@ -1,19 +1,81 @@
-service: sls-my-first-lambda
+service: desafio-2-back
+frameworkVersion: '2'
 
 provider:
   name: aws
   runtime: nodejs12.x
-  stage: ${opt:stage, 'dev'}
-  region: ${opt:region, 'us-east-1'}
-  memorySize: 128
-  timeout: 3
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: arn:aws:dynamodb:us-east-1:*:*
+
+resources:
+  Resources:
+    ReservesTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: 'reserves'
 
 functions:
-  index:
-    handler: index.handler
-    description: My first lambda example
+  list:
+    handler: src/functions/listReserve.listReserve
+    description: List Reserves
     events:
       - http:
-          path: /
+          path: listReserves
           method: get
           cors: true
+  create:
+    handler: src/functions/createReserve.createReserve
+    description: Create Reserve
+    events:
+      - http:
+          path: postReserve
+          method: post
+          cors: true
+  get:
+    handler: src/functions/getReserve.getReserve
+    description: Get Reserve
+    events:
+      - http:
+          path: listReserves/{id}
+          method: get
+          cors: true
+  update:
+    handler: src/functions/updateReserve.updateReserve
+    description: Update Reserve
+    events:
+      - http:
+          path: updateReserves/{id}
+          method: put
+          cors: true
+  send:
+    handler: src/functions/sendEmail.enviarEmail
+    description: Send email via Nodemailer
+    events:
+      - http:
+          path: sendEmail
+          method: post
+          cors: true
+   
+
