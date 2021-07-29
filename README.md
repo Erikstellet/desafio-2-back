@@ -14,6 +14,7 @@ O projeto foi elaborado durante o desafio BGC,contudo foi feito back e front end
     - API Gateway
     - Lambda Function
     - DynamoDB
+    - S3
     
 - [Nodemailer](https://nodemailer.com/about/)
 
