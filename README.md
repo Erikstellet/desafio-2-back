@@ -3,7 +3,7 @@
 
 ## 📋 Sobre
 
-O projeto foi elaborado durante o desafio BGC,contudo foi feito back e front end da aplicação.
+O projeto foi elaborado durante o desafio BGC, contudo foi feito back e front end da aplicação.
 
 
 ## 👨‍💻 Tecnologias utilizadas
